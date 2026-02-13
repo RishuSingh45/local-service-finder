@@ -8,9 +8,10 @@ const authRoutes = require("./routes/authRoutes");
 const testRoutes = require("./routes/testRoutes");
 const providerRoutes = require("./routes/providerRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
+const bookingRoutes = require("./routes/bookingRoutes");
 
 
-const app = express(); // ✅ app MUST be created before use
+const app = express(); //  app MUST be created before use
 
 // middleware
 app.use(cors());
@@ -21,6 +22,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/test", testRoutes);
 app.use("/api/provider", providerRoutes);
 app.use("/api/services", serviceRoutes);
+app.use("/api/bookings", bookingRoutes);
 
 
 app.get("/", (req, res) => {
